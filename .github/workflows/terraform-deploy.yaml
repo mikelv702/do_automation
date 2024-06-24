@@ -32,9 +32,9 @@ jobs:
       - name: Terraform Init
         run: |
           terraform -chdir=environments/dev init \
-              -backend-config="key={{ env.S3_KEY}}" \
-              -backend-config="bucket={{ env.S3_BUCKET }}" \
-              -backend-config="region={{ env.S3_REGION }}"
+              -backend-config="key=${{ vars.S3_KEY}}" \
+              -backend-config="bucket=${{ vars.S3_BUCKET }}" \
+              -backend-config="region=${{ vars.S3_REGION }}"
 
       - name: Terraform Format
         run: terraform  -chdir=environments/dev fmt -check
