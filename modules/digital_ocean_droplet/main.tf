@@ -10,6 +10,7 @@ resource "digitalocean_droplet" "droplet" {
   size   = var.droplet_size
   ssh_keys = [digitalocean_ssh_key.default.fingerprint]
   user_data = file("droplet_setup.yaml")
+  tags = ["terraform"]
 }
 
 data "digitalocean_domain" "default" {
