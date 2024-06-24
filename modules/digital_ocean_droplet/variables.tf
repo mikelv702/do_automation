@@ -19,3 +19,5 @@ variable "droplet_image_name" {
     type = string
     default = "ubuntu-24-04-x64"
 }
+
+variable "domain_name" {}

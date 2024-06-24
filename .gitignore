@@ -38,3 +38,8 @@ override.tf.json
 terraform.rc
 
 .terraform.lock.hcl
+
+
+## Ignore Environments
+
+environments/eh_dev/
