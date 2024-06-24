@@ -7,8 +7,8 @@ terraform {
   }
 }
 
-variable "do_token" {}
+variable "DO_API_TOKEN" {}
 
 provider "digitalocean" {
-  token = var.do_token
+  token = var.DO_API_TOKEN
 }
