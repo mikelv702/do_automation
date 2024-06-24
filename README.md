@@ -1,4 +1,8 @@
+# Digital Ocean Terraform Templates
 
+## Modules
+
+[Basic Digital Ocaen Droplet](modules/digital_ocean_droplet/README.md)
 
 ## Development environment
 1. Export your digital ocean PAT and cd into the development folder.
@@ -16,10 +20,10 @@ cd environments/dev
 
 ### Commands
 `terraform init -var "do_token=${DO_PAT}"`
+
 `terraform plan -var "do_token=${DO_PAT}"`
+
 `terraform apply -var "do_token=${DO_PAT}"`
+
 `terraform destroy -var "do_token=${DO_PAT}"`
 
-```
-terraform apply -var "do_token=${DO_PAT}"
-```
