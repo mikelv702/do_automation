@@ -25,6 +25,7 @@ region="us-west-1"
 ```
 export DO_API_TOKEN=<DIGITALOCEAN_PERSONAL_ACCESS_TOKEN>
 export DOMAIN_NAME=<INFRA DOMAIN>
+export TF_VAR_PUBLIC_SSH_KEY=<PUBLIC SSH KEY>
 export TF_VAR_domain_name="$DOMAIN_NAME"
 export TF_VAR_DO_API_TOKEN="$DO_API_TOKEN"
 echo $TF_VAR_domain_name

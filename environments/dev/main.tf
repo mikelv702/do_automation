@@ -6,7 +6,7 @@ module "jumphosts" {
   prefix             = "dev"
   domain_name        = var.domain_name
   droplet_image_name = "ubuntu-22-04-x64"
-  PUBLIC_SSH_KEY = var.PUBLIC_SSH_KEY
+  PUBLIC_SSH_KEY     = var.PUBLIC_SSH_KEY
 }
 
 module "fw_jumphosts" {
