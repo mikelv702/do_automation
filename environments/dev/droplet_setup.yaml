@@ -1,23 +1,16 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MIT
-
 #cloud-config
 groups:
   - ubuntu: [root,sys]
   - developer
 
-# Add users to the system. Users are added after groups are added.
 users:
   - default
-  # - name: terraform
-  #   gecos: terraform
-  #   shell: /bin/bash
-  #   primary_group: hashicorp
-  #   sudo: ALL=(ALL) NOPASSWD:ALL
-  #   groups: users, admin
-  #   lock_passwd: false
-  #   ssh_authorized_keys:
-  #     - # Paste your created SSH key here
+  - name: example-user
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_import_id:
+      - gh:<your-GitHub-username>
+
 
 runcmd:
   - sudo apt-get update
