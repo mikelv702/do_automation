@@ -20,7 +20,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: us-west-1
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -32,9 +32,9 @@ jobs:
       - name: Terraform Init
         run: |
           terraform -chdir=environments/dev init \
-              -backend-config="key={{ vars.s3_key}}" \
-              -backend-config="bucket={{ vars.s3_bucket }}" \
-              -backend-config="region={{ vars.s3_region }}"
+              -backend-config="key={{ vars.S3_KEY}}" \
+              -backend-config="bucket={{ vars.S3_BUCKET }}" \
+              -backend-config="region={{ vars.S3_REGION }}"
 
       - name: Terraform Format
         run: terraform  -chdir=environments/dev fmt -check
