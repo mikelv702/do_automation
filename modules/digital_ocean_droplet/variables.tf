@@ -3,6 +3,8 @@ variable "droplet_count" {
     default = 1
 }
 
+variable "PUBLIC_SSH_KEY" {}
+
 variable "group_name" {}
 variable "prefix" {}
 variable "droplet_size" {
