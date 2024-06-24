@@ -31,20 +31,17 @@ jobs:
 
       - name: Terraform Init
         run: |
-          ls 
-          cd environments/dev/
-          ls
-          terraform init \
+          terraform -chdir=environments/dev init \
               -backend-config="key={{ vars.s3_key}}" \
               -backend-config="bucket={{ vars.s3_bucket }}" \
               -backend-config="region={{ vars.s3_region }}"
 
       - name: Terraform Format
-        run: terraform fmt -check
+        run: terraform  -chdir=environments/dev fmt -check
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform  -chdir=environments/dev plan
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+        run: terraform  -chdir=environments/dev apply -auto-approve
