@@ -31,6 +31,9 @@ jobs:
 
       - name: Terraform Init
         run: |
+          ls 
+          cd environments/dev/
+          ls
           terraform init \
               -backend-config="key={{ vars.s3_key}}" \
               -backend-config="bucket={{ vars.s3_bucket }}" \
