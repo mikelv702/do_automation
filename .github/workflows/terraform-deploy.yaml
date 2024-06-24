@@ -44,6 +44,7 @@ jobs:
           export DOMAIN_NAME=${{ vars.DOMAIN_NAME }}
           export TF_VAR_domain_name="$DOMAIN_NAME"
           export TF_VAR_DO_API_TOKEN="$DO_API_TOKEN"
+          export TF_VAR_PUBLIC_SSH_KEY=${{ secrets.PUBLIC_SSH_KEY }}
           terraform  -chdir=environments/dev plan
 
       - name: Terraform Apply
@@ -53,5 +54,5 @@ jobs:
           export DOMAIN_NAME=${{ vars.DOMAIN_NAME }}
           export TF_VAR_domain_name="$DOMAIN_NAME"
           export TF_VAR_DO_API_TOKEN="$DO_API_TOKEN"
-          export TF_VAR_PUBLIC_SSH_KEY=${{ secrets.PUBLIC_SSH_KEY}}
+          export TF_VAR_PUBLIC_SSH_KEY=${{ secrets.PUBLIC_SSH_KEY }}
           terraform  -chdir=environments/dev apply -auto-approve
