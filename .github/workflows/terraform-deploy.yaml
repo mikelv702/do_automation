@@ -25,7 +25,12 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.1.7"
-
+      - name: Export TF Variables
+        run: |
+          export DO_API_TOKEN=${{ secrets.DO_API_TOKEN }}
+          export DOMAIN_NAME=${{ vars.DOMAIN_NAME }}
+          export TF_VAR_domain_name="$DOMAIN_NAME"
+          export TF_VAR_DO_API_TOKEN="$DO_API_TOKEN"
       - name: Change Enviroment Directory
         run: cd environments/dev/ 
 
