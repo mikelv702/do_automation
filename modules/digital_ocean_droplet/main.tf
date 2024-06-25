@@ -1,6 +1,6 @@
 resource "digitalocean_ssh_key" "default" {
   name       = "Cloud SSH Key"
-  public_key = file("~/.ssh/id_ed25519.pub")
+  public_key = var.PUBLIC_SSH_KEY
 }
 resource "digitalocean_droplet" "droplet" {
   count  = var.droplet_count
