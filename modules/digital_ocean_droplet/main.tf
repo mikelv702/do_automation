@@ -1,5 +1,5 @@
 resource "digitalocean_ssh_key" "default" {
-  name       = "Cloud SSH Key"
+  name       = "Cloud Admin SSH Key"
   public_key = var.PUBLIC_SSH_KEY
 }
 resource "digitalocean_droplet" "droplet" {
