@@ -1,5 +1,8 @@
 # Digital Ocean Terraform Templates
 
+## Deployment Testing
+[![Terraform Deploy](https://github.com/EngineerHub-io/do_terrform/actions/workflows/terraform-deploy.yaml/badge.svg)](https://github.com/EngineerHub-io/do_terrform/actions/workflows/terraform-deploy.yaml)
+
 ## Modules
 
 [Basic Digital Ocaen Droplet](terraform/modules/digital_ocean_droplet/README.md)
